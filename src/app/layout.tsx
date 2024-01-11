@@ -1,5 +1,7 @@
 import Footer from "@/components/Footer";
 import { NavBar } from "@/components/NavBar";
+import { theme } from "@/components/theme";
+import { ThemeProvider } from "@mui/material";
 
 export const metadata = {
   title: "My App",
@@ -19,13 +21,15 @@ export default function RootLayout({
           backgroundColor: "#222831",
         }}
       >
-        <header>
-          <NavBar />
-        </header>
-        {children}
-        <footer>
-          <Footer />
-        </footer>
+        <ThemeProvider theme={theme}>
+          <header>
+            <NavBar />
+          </header>
+          {children}
+          <footer>
+            <Footer />
+          </footer>
+        </ThemeProvider>
       </body>
     </html>
   );

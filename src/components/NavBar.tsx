@@ -1,13 +1,8 @@
 "use client";
 import { Stack, Typography } from "@mui/material";
-import { useRouter } from "next/navigation";
 import React from "react";
 
 export const NavBar = () => {
-  const { push } = useRouter();
-  const handleAboutClick = () => {
-    push("/dummy");
-  };
   return (
     <Stack
       sx={{
@@ -28,7 +23,7 @@ export const NavBar = () => {
             fontWeight={500}
             fontFamily="monospace"
           >
-            SaulDesign
+            ADesign
           </Typography>
         </Stack>
         <Stack direction="row" gap="48px">
@@ -36,11 +31,7 @@ export const NavBar = () => {
             {" "}
             Home
           </Typography>
-          <Typography
-            fontSize="18px"
-            color="#EEEEEE"
-            onClick={handleAboutClick}
-          >
+          <Typography fontSize="18px" color="#EEEEEE">
             About Me
           </Typography>
           <Typography fontSize="18px" color="#EEEEEE">

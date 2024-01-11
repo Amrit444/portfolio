@@ -47,10 +47,11 @@ export const AboutMeConatiner = () => {
               fontWeight: 400,
             }}
           >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat
-            minima quam libero a pariatur. Quia quos similique explicabo. Libero
-            delectus nam nulla dignissimos sit inventore at doloremque eligendi
-            molestias. Amet libero perspiciatis eligendi tempora!
+            Greetings! I'm Amrit Udasi, a 2023 graduate from Medicaps University
+            with a BTech degree. I'm currently immersed as a full-time Research
+            and Development Engineer at Deqode Labs, where I passionately
+            contribute insights and expertise, driving innovation and
+            advancement in our projects.
           </Typography>
         </Stack>
         <Stack

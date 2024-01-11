@@ -1,15 +1,43 @@
-import { Card, CardContent, Stack, Typography } from "@mui/material";
 import React from "react";
+import { Card, CardContent, Stack, Typography } from "@mui/material";
+import Image from "next/image";
 import CourseWebsiteSvg from "../../../public/Course Website Landing Page Thumbnail 1.svg";
 import CompSvg from "../../../public/Group 33.svg";
 
-import Image from "next/image";
+const CustomCard = ({ imageSrc, altText, width, height }: any) => {
+  return (
+    <Card
+      sx={{
+        width: "330px",
+        backgroundColor: "rgba(57, 62, 70, 0.50)",
+        justifyContent: "center",
+        alignItems: "center",
+        borderRadius: "16px",
+      }}
+    >
+      <CardContent
+        sx={{
+          padding: "30px",
+          alignItems: "center",
+        }}
+      >
+        <Image src={imageSrc} alt={altText} width={width} height={height} />
+      </CardContent>
+    </Card>
+  );
+};
 
 export const RecentWorkContainer = () => {
+  const workData = [
+    { imageSrc: CourseWebsiteSvg, altText: "work1", width: 250, height: 150 },
+    { imageSrc: CompSvg, altText: "work2", width: 250, height: 150 },
+    // Add more work data as needed
+  ];
+
   return (
     <Stack
       direction="column"
-      paddingX="250px"
+      paddingX="370px"
       paddingY="200px"
       gap={5}
       sx={{
@@ -26,47 +54,9 @@ export const RecentWorkContainer = () => {
         </Typography>
       </Stack>
       <Stack direction="row" gap={8}>
-        <Card
-          sx={{
-            width: "330px",
-            backgroundColor: " rgba(57, 62, 70, 0.50)",
-            justifyContent: "center",
-            alignItems: "center",
-            borderRadius: "16px",
-          }}
-        >
-          <CardContent
-            sx={{
-              padding: "30px",
-              alignItems: "center",
-            }}
-          >
-            <Image
-              src={CourseWebsiteSvg}
-              alt="work1"
-              width={250}
-              height={150}
-            />
-          </CardContent>
-        </Card>
-        <Card
-          sx={{
-            width: "330px",
-            backgroundColor: " rgba(57, 62, 70, 0.50)",
-            justifyContent: "center",
-            alignItems: "center",
-            borderRadius: "16px",
-          }}
-        >
-          <CardContent
-            sx={{
-              alignItems: "center",
-              padding: "30px",
-            }}
-          >
-            <Image src={CompSvg} alt="work1" width={250} height={150} />
-          </CardContent>
-        </Card>
+        {workData.map((work, index) => (
+          <CustomCard key={index} {...work} />
+        ))}
       </Stack>
     </Stack>
   );
